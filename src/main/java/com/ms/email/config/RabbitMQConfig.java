@@ -15,4 +15,10 @@ public class RabbitMQConfig {
     public Queue queue() {
         return new Queue(queue,true);
     }
+
+    @Bean
+    public Jackson2JsonMessageConverter messageConverter() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        return new Jackson2JsonMessageConverter(objectMapper);
+    }
 }
